@@ -758,7 +758,7 @@ namespace Akka.Actor
 
         private string ToStringWithAddress(Address address, bool includeUid)
         {
-            if (IgnoreActorRef.IsIgnoreRefPath(this))
+            if (address == null || IgnoreActorRef.IsIgnoreRefPath(this))
             {
                 // we never change address for IgnoreActorRef
                 return ToString();
